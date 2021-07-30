@@ -172,7 +172,23 @@ class JoinHandler extends Component {
       Session.set('bannerText', resp.bannerText);
       Session.set('bannerColor', resp.bannerColor);
     };
-
+    const setThemeColors = (resp) => {
+      console.log(resp);
+      const pc = resp.metadata[0]['primary-color']; // pc = primary color
+      const sc = resp.metadata[3]['secondary-color']; // sc = secondary color
+      const bi = resp.metadata[4]['back-image']; // bi = background image
+      if (pc) {
+        document.documentElement.style.setProperty('--color-primary', pc);
+      } else {
+        document.documentElement.style.setProperty('--color-primary', '#7247C4');
+      }
+      if (sc) {
+        document.documentElement.style.setProperty('--color-secondary', sc);
+      }
+      if (bi) {
+        document.documentElement.style.setProperty('--banner-bg', `url("${bi}")`);
+      }
+    };
     // use enter api to get params for the client
     const url = `/bigbluebutton/api/enter?sessionToken=${sessionToken}`;
     const fetchContent = await fetch(url, { credentials: 'same-origin' });
