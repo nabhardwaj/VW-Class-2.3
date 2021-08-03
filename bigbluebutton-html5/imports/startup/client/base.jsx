@@ -398,7 +398,7 @@ const BaseContainer = withTracker(() => {
     if (!checkedUserSettings) {
       if (getFromUserSettings('bbb_show_participants_on_login', Meteor.settings.public.layout.showParticipantsOnLogin) && !deviceInfo.isPhone) {
         if (CHAT_ENABLED && getFromUserSettings('bbb_show_public_chat_on_login', !Meteor.settings.public.chat.startClosed)) {
-          Session.set('openPanel', 'chat');
+          Session.set('openPanel', ''); // to open chat panel by default add set session to 'chat'
           Session.set('idChatOpen', PUBLIC_CHAT_ID);
         } else {
           Session.set('openPanel', 'userlist');

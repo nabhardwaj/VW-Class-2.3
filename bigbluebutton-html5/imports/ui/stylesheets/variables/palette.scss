@@ -14,7 +14,8 @@
   --color-blue-lighter: #92BCEA;
   --color-blue-lightest: #E4ECF2;
 
-  --color-primary: #0F70D7;
+  --color-primary: #FFFFFF;     // default #0F70D7;
+  --color-secondary: #FFFFFF;
   --color-success: #008081;
   --color-danger: #DF2721;
   --color-warning: purple;
@@ -35,8 +36,8 @@
 
   --color-white-with-transparency: #ffffff40;
 
-  --loader-bg: var(--color-gray-dark);
-  --loader-bullet: var(--color-white);
+  --loader-bg: var(--color-primary); // default : var(--color-gray-dark);
+  --loader-bullet: var(--color-secondary); // default : var(--color-white);
   --user-list-bg: var(--color-off-white);
 
   --unread-messages-bg: var(--color-danger);
@@ -58,4 +59,6 @@
 
   --list-item-bg-hover: #dce4ed;
   --item-focus-border: var(--color-blue-lighter);
+
+  --banner-bg: none;
 }

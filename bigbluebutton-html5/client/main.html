@@ -21,6 +21,7 @@ with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
   <style>
     html {
       box-sizing: border-box;
+      height: 100%;
     }
 
     *, *:before, *:after {
@@ -32,7 +33,14 @@ with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
       height: 100%;
       font-family: 'Source Sans Pro', Arial, sans-serif;
       font-size: 1rem; /* 16px */
-      background-color: #06172A;
+      background-color: var(--color-primary);
+      background-image: var(--banner-bg);
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: center;
     }
 
     a {
@@ -95,8 +103,8 @@ with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
   <link rel="preload" href="fonts/SourceSansPro/SourceSansPro-BoldItalic.woff" as="font" crossorigin="anonymous"/>
   <!-- fonts -->
 </head>
-<body style="background-color: #06172A">
-  <div id="app" role="document"></div>
+<body>
+  <div id="app" role="document"> </div>
   <span id="destination"></span>
   <audio id="remote-media" autoplay>
   </audio>
