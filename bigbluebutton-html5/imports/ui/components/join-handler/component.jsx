@@ -205,6 +205,7 @@ class JoinHandler extends Component {
       setBannerProps(response);
       setLogoURL(response);
       setModOnlyMessage(response);
+      setThemeColors(response);
 
       Tracker.autorun(async (cd) => {
         const user = Users.findOne({ userId: Auth.userID, approved: true }, { fields: { _id: 1 } });

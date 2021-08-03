@@ -1,5 +1,6 @@
 @import "/imports/ui/stylesheets/variables/breakpoints";
 @import "/imports/ui/stylesheets/variables/placeholders";
+@import "/imports/ui/components/modal/simple/styles";
 
 .tabs {
   @extend %flex-row;
@@ -107,4 +108,14 @@
   [dir="rtl"] & {
     margin: 0 0 0 var(--sm-padding-x);
   }
+}
+.overlay {
+  @extend .overlay;
+}
+
+.modal {
+  @extend .modal;
+  align-self: center;
+  padding: 1.5rem;
+  min-height: 30rem;
 }
