@@ -26,7 +26,7 @@ public:
     # "media.setsinkid.enabled" to make it work properly
     # enableDynamicAudioDeviceSelection: true
     #
-    clientTitle: BigBlueButton
+    clientTitle: VideoWiki
     appName: BigBlueButton HTML5 Client
     bbbServerVersion: 2.3
     copyright: '©2021 BigBlueButton Inc.'

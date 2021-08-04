@@ -234,7 +234,7 @@ export default lockContextContainer(withModalMounter(injectIntl(withTracker(({ m
         userSelectedMicrophone
         && userSelectedListenOnly
         && meetingIsBreakout)) {
-        openAudioModal();
+        // openAudioModal();
         didMountAutoJoin = true;
       }
     },

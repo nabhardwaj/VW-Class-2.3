@@ -105,7 +105,7 @@
 
 .audioBtn {
   i {
-    color: #3c5764;
+    color: var(--color-secondary);
   }
 }
 
@@ -118,9 +118,11 @@
 // Modifies the audio button icon colour
 .audioBtn span:first-child {
   color: #1b3c4b;
-  background-color: #f1f8ff;
+  background-color: var(--color-primary);
+ // background-color: rgba(var(--color-primary),0.7); //#f1f8ff;
   box-shadow: none;
-  border: 5px solid #f1f8ff;
+  border: 5px solid var(--color-primary);
+ // border: 5px solid rgba(var(--color-primary),0.7); //#f1f8ff;
   font-size: 3.5rem;
 
   @include mq($small-only) {
@@ -132,7 +134,11 @@
 .audioBtn:hover span:first-child,
 .audioBtn:focus span:first-child {
   border: 5px solid var(--color-primary);
-  background-color: #f1f8ff;
+  background-color: #fff; //#f1f8ff;
+}
+.audioBtn:hover span:first-child i,
+.audioBtn:focus span:first-child i{
+  color: var(--color-primary);
 }
 
 // Modifies the button label text

@@ -54,19 +54,6 @@ class UserContent extends PureComponent {
         data-test="userListContent"
         className={styles.content}
       >
-        {CHAT_ENABLED
-          ? (<UserMessages
-            {...{
-              isPublicChat,
-              compact,
-              intl,
-              roving,
-              currentClosedChats,
-              startedChats,
-            }}
-          />
-          ) : null
-        }
         {currentUser.role === ROLE_MODERATOR
           ? (
             <UserCaptionsContainer
@@ -74,13 +61,8 @@ class UserContent extends PureComponent {
                 intl,
               }}
             />
-          ) : null
-        }
-        <UserNotesContainer
-          {...{
-            intl,
-          }}
-        />
+          ) : null}
+
         {pendingUsers.length > 0 && currentUser.role === ROLE_MODERATOR
           ? (
             <WaitingUsers
@@ -89,16 +71,8 @@ class UserContent extends PureComponent {
                 pendingUsers,
               }}
             />
-          ) : null
-        }
-        <UserPolls
-          isPresenter={currentUser.presenter}
-          {...{
-            pollIsOpen,
-            forcePollOpen,
-          }}
-        />
-        <BreakoutRoomItem isPresenter={currentUser.presenter} hasBreakoutRoom={hasBreakoutRoom} />
+          ) : null}
+
         <UserParticipantsContainer
           {...{
             compact,
@@ -110,6 +84,34 @@ class UserContent extends PureComponent {
             requestUserInformation,
           }}
         />
+        <div className={styles.mbSep}>
+          <UserPolls
+            isPresenter={currentUser.presenter}
+            {...{
+              pollIsOpen,
+              forcePollOpen,
+            }}
+          />
+          <UserNotesContainer
+            {...{
+              intl,
+            }}
+          />
+          <BreakoutRoomItem isPresenter={currentUser.presenter} hasBreakoutRoom={hasBreakoutRoom} />
+          {CHAT_ENABLED
+            ? (
+              <UserMessages
+                {...{
+                  isPublicChat,
+                  compact,
+                  intl,
+                  roving,
+                  currentClosedChats,
+                  startedChats,
+                }}
+              />
+            ) : null}
+        </div>
       </div>
     );
   }
